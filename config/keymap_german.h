@@ -1,95 +1,122 @@
 /**
- * This file includes custom keycodes for the italian input language setting.
- * If you only type in english, you can delete this file and it's import.
+ * This file includes custom keycodes for the German input language setting.
+ * If you only type in English, you can delete this file and its import.
  * If you wish to replace this file with your preferred language, use
- * the qmk version as reference:
+ * the QMK version as reference:
  * https://github.com/qmk/qmk_firmware/tree/master/quantum/keymap_extras
 */
 
-// Copyright 2024 QMK
-// SPDX-License-Identifier: GPL-2.0-or-later
 
-#pragma once
-#include "keycodes.h"
-// clang-format off
+/*
+ * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
+ * │ ^ │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │ ß │ ´ │       │
+ * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤
+ * │ Tab │ Q │ W │ E │ R │ T │ Z │ U │ I │ O │ P │ Ü │ + │     │
+ * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐    │
+ * │ Caps │ A │ S │ D │ F │ G │ H │ J │ K │ L │ Ö │ Ä │ # │    │
+ * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴────┤
+ * │Shift│ < │ Y │ X │ C │ V │ B │ N │ M │ , │ . │ - │ Shift    │
+ * ├────┼───┴┬──┴─┬─┴───┴───┴───┴───┴───┴──┬┴───┼───┴┬────┬────┤
+ * │ Ctrl│Win│Alt │                        │ Alt│Win │Menu│Ctrl│
+ * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
+ */
+// Row 1
+#define DE_CARET GRAVE           // ^
+#define DE_SS MINUS              // ß
+#define DE_ACUT EQUAL            // ´
+// Row 2
+#define DE_UDIA LBKT             // Ü
+#define DE_PLUS RBKT             // +
+// Row 3
+#define DE_ODIA SEMI             // Ö
+#define DE_ADIA APOS             // Ä
+#define DE_HASH NON_US_BSLH      // #
+// Row 4
+#define DE_LABK NON_US_HASH      // <
+#define DE_MINS SLASH            // -
 
-// Aliases
-#define DE_CIRC KC_GRV  
-#define DE_1    KC_1    // 1
-#define DE_2    KC_2    // 2
-#define DE_3    KC_3    // 3
-#define DE_4    KC_4    // 4
-#define DE_5    KC_5    // 5
-#define DE_6    KC_6    // 6
-#define DE_7    KC_7    // 7
-#define DE_8    KC_8    // 8
-#define DE_9    KC_9    // 9
-#define DE_0    KC_0    // 0
-#define DE_SS   KC_MINS // ß
-#define DE_ACUT KC_EQL  // ´ (dead)
-#define DE_Q    KC_Q    // Q
-#define DE_W    KC_W    // W
-#define DE_E    KC_E    // E
-#define DE_R    KC_R    // R
-#define DE_T    KC_T    // T
-#define DE_Z    KC_Y    // Z
-#define DE_U    KC_U    // U
-#define DE_I    KC_I    // I
-#define DE_O    KC_O    // O
-#define DE_P    KC_P    // P
-#define DE_UDIA KC_LBRC // Ü
-#define DE_PLUS KC_RBRC // +
-#define DE_A    KC_A    // A
-#define DE_S    KC_S    // S
-#define DE_D    KC_D    // D
-#define DE_F    KC_F    // F
-#define DE_G    KC_G    // G
-#define DE_H    KC_H    // H
-#define DE_J    KC_J    // J
-#define DE_K    KC_K    // K
-#define DE_L    KC_L    // L
-#define DE_ODIA KC_SCLN // Ö
-#define DE_ADIA KC_QUOT // Ä
-#define DE_HASH KC_NUHS // #
-#define DE_LABK KC_NUBS // <
-#define DE_Y    KC_Z    // Y
-#define DE_X    KC_X    // X
-#define DE_C    KC_C    // C
-#define DE_V    KC_V    // V
-#define DE_B    KC_B    // B
-#define DE_N    KC_N    // N
-#define DE_M    KC_M    // M
-#define DE_COMM KC_COMM // ,
-#define DE_DOT  KC_DOT  // .
-#define DE_MINS KC_SLSH // -
-#define DE_DEG  S(DE_CIRC) // °
-#define DE_EXLM S(DE_1)    // !
-#define DE_DQUO S(DE_2)    // "
-#define DE_SECT S(DE_3)    // §
-#define DE_DLR  S(DE_4)    // $
-#define DE_PERC S(DE_5)    // %
-#define DE_AMPR S(DE_6)    // &
-#define DE_SLSH S(DE_7)    // /
-#define DE_LPRN S(DE_8)    // (
-#define DE_RPRN S(DE_9)    // )
-#define DE_EQL  S(DE_0)    // =
-#define DE_QUES S(DE_SS)   // ?
-#define DE_GRV  S(DE_ACUT) // ` (dead)
-#define DE_ASTR S(DE_PLUS) // *
-#define DE_QUOT S(DE_HASH) // '
-#define DE_RABK S(DE_LABK) // >
-#define DE_SCLN S(DE_COMM) // ;
-#define DE_COLN S(DE_DOT)  // :
-#define DE_UNDS S(DE_MINS) // _
-#define DE_SUP2 ALGR(DE_2)    // ²
-#define DE_SUP3 ALGR(DE_3)    // ³
-#define DE_LCBR ALGR(DE_7)    // {
-#define DE_LBRC ALGR(DE_8)    // [
-#define DE_RBRC ALGR(DE_9)    // ]
-#define DE_RCBR ALGR(DE_0)    // }
-#define DE_BSLS ALGR(DE_SS)   // (backslash)
-#define DE_AT   ALGR(DE_Q)    // @
-#define DE_EURO ALGR(DE_E)    // €
-#define DE_TILD ALGR(DE_PLUS) // ~
-#define DE_PIPE ALGR(DE_LABK) // |
-#define DE_MICR ALGR(DE_M)    // µ
+/* Shifted symbols
+ * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
+ * │ ° │ ! │ " │ § │ $ │ % │ & │ / │ ( │ ) │ = │ ? │ ` │       │
+ * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤
+ * │     │ Q │ W │ E │ R │ T │ Z │ U │ I │ O │ P │ Ü │ * │     │
+ * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐    │
+ * │      │ A │ S │ D │ F │ G │ H │ J │ K │ L │ Ö │ Ä │ ' │    │
+ * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴────┤
+ * │Shift│ > │ Y │ X │ C │ V │ B │ N │ M │ ; │ : │ _ │ Shift    │
+ * ├────┼───┴┬──┴─┬─┴───┴───┴───┴───┴───┴──┬┴───┼───┴┬────┬────┤
+ * │ Ctrl│Win│Alt │                        │ Alt│Win │Menu│Ctrl│
+ * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
+ */
+// Row 1
+#define DE_DEG LS(GRAVE)         // °
+#define DE_EXCL LS(N1)           // !
+#define DE_DQUO LS(N2)           // "
+#define DE_SECT LS(N3)           // §
+#define DE_DOLL LS(N4)           // $
+#define DE_PERC LS(N5)           // %
+#define DE_AMPS LS(N6)           // &
+#define DE_SLSH LS(N7)           // /
+#define DE_LPAR LS(N8)           // (
+#define DE_RPAR LS(N9)           // )
+#define DE_EQL  LS(N0)           // =
+#define DE_QUES LS(MINUS)        // ?
+#define DE_GRV  LS(EQUAL)        // `
+// Row 2
+#define DE_ASTR LS(RBKT)         // *
+// Row 3
+#define DE_QUOT LS(APOS)         // '
+// Row 4
+#define DE_RABK LS(NON_US_HASH)  // >
+#define DE_UNDS LS(SLASH)        // _
+
+/* AltGr symbols
+ * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
+ * │ ~ │ ¹ │ ² │ ³ │ € │   │   │ { │ [ │ ] │ } │ \ │   │       │
+ * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤
+ * │     │ @ │   │ € │   │   │   │   │   │   │   │ ¨ │ ´ │     │
+ * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐    │
+ * │      │   │   │   │   │   │   │   │   │   │   │   │ | │    │
+ * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴────┤
+ * │    │   │   │   │   │   │   │   │   │   │   │   │          │
+ * ├────┼───┴┬──┴─┬─┴───┴───┴───┴───┴───┴───┬┴───┼───┴┬────┬────┤
+ * │    │    │    │                        │    │    │    │    │
+ * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
+ */
+// Row 1
+#define DE_TILD RA(GRAVE)        // ~
+#define DE_EURO RA(E)            // €
+// Row 2
+#define DE_LBRK RA(N7)           // {
+#define DE_LBRC RA(LBKT)         // [
+#define DE_RBRC RA(RBKT)         // ]
+#define DE_RBRK RA(N0)           // }
+// Row 4
+#define DE_PIPE RA(NON_US_BSLH)  // |
+
+/* Shift+AltGr symbols
+ * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
+ * │   │   │   │   │   │   │   │   │   │   │   │   │   │       │
+ * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤
+ * │     │   │   │   │   │   │   │   │   │   │   │ ° │ ^ │     │
+ * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┐    │
+ * │      │   │   │   │   │   │   │   │   │   │   │   │ ~ │    │
+ * ├────┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴────┤
+ * │    │   │   │   │   │   │   │   │   │   │   │   │          │
+ * ├────┼───┴┬──┴─┬─┴───┴───┴───┴───┴───┴───┬┴───┼───┴┬────┬────┤
+ * │    │    │    │                        │    │    │    │    │
+ * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
+ */
+// Row 2
+#define DE_DEG2 LS(RA(RBKT))     // °
+#define DE_CIRC LS(RA(LBKT))     // ^
+
+/** 
+ * Personalized symbols.
+ * 
+ * These symbols are not part of the default German input.
+ * I use a custom Windows keymap to input them.
+*/
+#define DE_BKTK RA(MINUS)        // `
+#define DE_TLD RA(EQUAL)         // ~
+#define DE_CEGR RA(N3)           // €
